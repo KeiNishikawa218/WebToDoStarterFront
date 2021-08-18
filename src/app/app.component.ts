@@ -11,8 +11,10 @@ import { TaskService } from './task.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  title = 'WebToDoStarterFront';
+  public todoTableIndex: string[] = ['id', 'title', 'detail', 'deadline'];
   public tasks: Task[];
-
+  
   constructor(private taskService: TaskService) {
     this.tasks = [];
   }

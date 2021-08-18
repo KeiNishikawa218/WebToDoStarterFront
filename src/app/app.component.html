@@ -1,3 +1,12 @@
-<div *ngFor="let task of tasks">
-  <div>{{task.title}}</div>
+<h1>Todo Management</h1>
+<div>
+  <table>
+  <th *ngFor="let index of todoTableIndex">{{index}}</th>
+  <tr *ngFor="let task of tasks">
+    <td>{{task.id}}</td>
+    <td>{{task.title}}</td>
+    <td>{{task.deadline}}</td>
+    <td>{{task.taskType.type}}</td>
+  </tr>
+  </table>
 </div>
