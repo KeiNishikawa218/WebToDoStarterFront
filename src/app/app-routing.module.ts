@@ -3,11 +3,11 @@ import { CommonModule } from '@angular/common';
 
 import { RouterModule, Routes } from '@angular/router';
 import { UpdateComponent } from './task/update/update.component';
-import { AppComponent } from './app.component';
+import { TopPageComponent } from './task/top-page/top-page.component';
 
 const routes: Routes = [
-      {path: '', component: AppComponent},
-      {path: 'task/update', component: UpdateComponent}
+      {path: '', component: TopPageComponent},
+      {path: 'update', component: UpdateComponent}
 ];
 
 @NgModule({
@@ -15,10 +15,6 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forRoot(routes)
-    // RouterModule.forRoot([
-    //   {path: '', component: AppComponent},
-    //   {path: 'task/update', component: UpdateComponent}
-    // ])
   ],
   exports: [
     RouterModule

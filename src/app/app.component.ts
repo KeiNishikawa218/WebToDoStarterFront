@@ -1,10 +1,5 @@
 import { Component } from '@angular/core';
-import { HttpErrorResponse } from '@angular/common/http';
 import { __asyncDelegator } from 'tslib';
-
-import { Task } from './task';
-import { TaskService } from './task.service';
-import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -13,37 +8,4 @@ import { NgForm } from '@angular/forms';
 })
 export class AppComponent {
   title = 'WebToDoStarterFront';
-  public todoTableIndex: string[] = ['id', 'title', 'detail', 'deadline'];
-  public tasks: Task[];
-  
-  constructor(private taskService: TaskService) {
-    this.tasks = [];
-  }
-
-  ngOnInit() {
-    this.getTasks();
-  }
-
-  public getTasks(): void {
-    this.taskService.getTasks().subscribe(
-      (response: Task[]) => {
-        this.tasks = response;
-      },
-      (error: HttpErrorResponse) => {
-        alert(error.message);
-      }
-    )
-  }
-
-  public createTask(task: NgForm) {
-    this.taskService.createTask(task.value).subscribe(
-      (response: Task) => {
-        console.log(response);
-        window.location.reload();
-      },
-      (error: HttpErrorResponse) => {
-        alert(error.message);
-      }
-    )
-  }
 }

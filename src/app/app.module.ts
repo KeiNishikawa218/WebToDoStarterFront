@@ -7,11 +7,13 @@ import { TaskService } from './task.service';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { UpdateComponent } from './task/update/update.component';
+import { TopPageComponent } from './task/top-page/top-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UpdateComponent
+    UpdateComponent,
+    TopPageComponent
   ],
   imports: [
     BrowserModule,
