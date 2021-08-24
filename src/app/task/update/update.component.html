@@ -1,7 +1,7 @@
 <h2>Update task</h2>
 <form #task="ngForm" (ngSubmit)="updateTask(task)">
     <label>please select task type </label>
-    <select name="typeId" [(ngModel)]="taskDetail.typeId" ngModel required [value]="task">
+    <select name="typeId" [(ngModel)]="taskDetail.typeId" ngModel required>
         <option value="1">urgent</option>
         <option value="2">important</option>
         <option value="3">if possible</option>

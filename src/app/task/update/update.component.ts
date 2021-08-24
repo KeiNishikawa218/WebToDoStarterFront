@@ -40,7 +40,6 @@ export class UpdateComponent implements OnInit {
   public updateTask(task: NgForm) {
     this.taskService.updateTask(task.value).subscribe(
       (response: Task) => {
-        console.log(response);
         this.router.navigateByUrl("");
       },
       (error: HttpErrorResponse) => {
