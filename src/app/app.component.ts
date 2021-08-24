@@ -4,6 +4,7 @@ import { __asyncDelegator } from 'tslib';
 
 import { Task } from './task';
 import { TaskService } from './task.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -27,6 +28,18 @@ export class AppComponent {
     this.taskService.getTasks().subscribe(
       (response: Task[]) => {
         this.tasks = response;
+      },
+      (error: HttpErrorResponse) => {
+        alert(error.message);
+      }
+    )
+  }
+
+  public createTask(task: NgForm) {
+    this.taskService.createTask(task.value).subscribe(
+      (response: Task) => {
+        console.log(response);
+        window.location.reload();
       },
       (error: HttpErrorResponse) => {
         alert(error.message);
