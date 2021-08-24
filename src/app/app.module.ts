@@ -8,12 +8,14 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { UpdateComponent } from './task/update/update.component';
 import { TopPageComponent } from './task/top-page/top-page.component';
+import { DeleteComponent } from './task/delete/delete.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UpdateComponent,
-    TopPageComponent
+    TopPageComponent,
+    DeleteComponent
   ],
   imports: [
     BrowserModule,

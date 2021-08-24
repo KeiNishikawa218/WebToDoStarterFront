@@ -13,7 +13,6 @@ import { Task } from '../task';
 export class UpdateComponent implements OnInit {
   public taskDetail: any;
   id?: string;
-  existedTask?: [];
 
   constructor(
     private taskService: TaskService,

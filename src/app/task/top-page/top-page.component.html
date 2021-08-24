@@ -11,8 +11,8 @@
             <td>{{task.taskType.type}}</td>
             <td><a type="button" [routerLink]="['/update', task.id]">edit</a></td>
             <td>
-                <form method="POST">
-                    <input type="hidden" name="taskId">
+                <form #taskId="ngForm" (ngSubmit)="deleteTask(taskId)">
+                    <input type="hidden" name="taskId" [(ngModel)]="task.id">
                     <input type="submit" value="delete">
                 </form>
             </td>
