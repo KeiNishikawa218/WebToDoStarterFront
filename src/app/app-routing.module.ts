@@ -7,7 +7,7 @@ import { TopPageComponent } from './task/top-page/top-page.component';
 
 const routes: Routes = [
       {path: '', component: TopPageComponent},
-      {path: 'update', component: UpdateComponent}
+      {path: 'update/:id', component: UpdateComponent}
 ];
 
 @NgModule({

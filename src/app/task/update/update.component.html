@@ -1,1 +1,19 @@
-<p>update works!</p>
+<h2>Update task</h2>
+<form #task="ngForm" (ngSubmit)="updateTask(task)">
+    <label>please select task type </label>
+    <select name="typeId" [(ngModel)]="taskDetail.typeId" ngModel required [value]="task">
+        <option value="1">urgent</option>
+        <option value="2">important</option>
+        <option value="3">if possible</option>
+    </select>
+    <br>
+    <label>todo: </label>
+    <input type="text" name="title" [(ngModel)]="taskDetail.title" ngModel required>
+    <br>
+    <label>detail： </label>
+    <input type="text" name="detail" [(ngModel)]="taskDetail.detail" ngModel required><br>
+    <label>deadline： </label>
+    <input type="datetime-local" name="deadline" [(ngModel)]="taskDetail.deadline" ngModel required><br>
+    <input type="hidden" name="id" [(ngModel)]="id">
+    <input type="submit" name="create" value="create" [disabled]="task.invalid">
+</form>

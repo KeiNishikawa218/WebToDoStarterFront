@@ -17,7 +17,15 @@ export class TaskService {
     return this.http.get<Task[]>(`${this.apiServerUrl}/api/all`);
   }
 
+  public getTaskById(id: number): Observable<string> {
+    return this.http.get<string>(`${this.apiServerUrl}/api/task/${id}`);
+  }
+
   public createTask(task: Task): Observable<Task>{
     return this.http.post<Task>(`${this.apiServerUrl}/api/insert`, task);
+  }
+
+  public updateTask(task: Task): Observable<Task>{
+    return this.http.put<Task>(`${this.apiServerUrl}/api/update/${task.id}`, task);
   }
 }

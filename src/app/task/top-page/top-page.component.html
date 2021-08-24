@@ -9,7 +9,7 @@
             <td>{{task.title}}</td>
             <td>{{task.deadline}}</td>
             <td>{{task.taskType.type}}</td>
-            <td><a type="button" href="">edit</a></td>
+            <td><a type="button" [routerLink]="['/update', task.id]">edit</a></td>
             <td>
                 <form method="POST">
                     <input type="hidden" name="taskId">
